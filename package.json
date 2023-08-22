@@ -1,0 +1,67 @@
+{
+  "name": "span-score",
+  "version": "1.0.0",
+  "description": "A simple scoreboard processor",
+  "author": "Robert MacLean <robert@sadev.co.za>",
+  "bin": {
+    "span-score": "./bin/run"
+  },
+  "homepage": "https://github.com/rmaclean/span-score",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "repository": "rmaclean/span-score",
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/core": "^2.11.8",
+    "@oclif/plugin-help": "^5.2.17",
+    "@oclif/plugin-plugins": "^3.2.7",
+    "group-items": "^3.0.3"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2.4.6",
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.5.2",
+    "chai": "^4.3.7",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4.0.0",
+    "eslint-config-oclif-typescript": "^1.0.3",
+    "mocha": "^10.2.0",
+    "oclif": "^3.11.3",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.1.6"
+  },
+  "oclif": {
+    "bin": "span-score",
+    "dirname": "span-score",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ]
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .ts --config .eslintrc",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "bugs": "https://github.com/rmaclean/span-score/issues",
+  "keywords": [
+    "oclif"
+  ],
+  "types": "dist/index.d.ts"
+}
