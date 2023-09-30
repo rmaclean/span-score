@@ -24,10 +24,10 @@
   },
   "devDependencies": {
     "@oclif/test": "^2.4.6",
-    "@types/chai": "^4.3.5",
+    "@types/chai": "^4.3.6",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.5.2",
-    "chai": "^4.3.7",
+    "chai": "^4.3.10",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.3",
